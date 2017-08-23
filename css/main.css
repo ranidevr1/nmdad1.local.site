@@ -1,0 +1,474 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* NAVIGATIE */
+
+header {
+    background-color: #FFF;
+}
+
+.logo {
+    margin: 0;
+    text-align: right;
+    float: right;
+}
+
+nav {
+    float: left;
+}
+
+ul {
+    list-style: none;
+    text-align: left;
+    padding: 0;
+    margin: 0 5% 0 0;
+    color: #1A5C94;
+}
+
+ul li {
+    display: block;
+    line-height: 45px;
+    margin: 0 1.2%;
+  }
+
+ul li a {
+    text-decoration: none;
+    display: block;
+    color: #1A5C94;
+}
+
+header ul {
+    padding: 0 0 0 10%;
+}
+
+header ul li a {
+    font-weight: 400;
+}
+
+main ul {
+    text-align: center;
+    margin: 0 0 -1.5% 0;
+}
+
+.active {
+    font-weight: bolder;
+}
+
+/* HAMBURGER */
+
+#menuToggle {
+    display: block;
+    position: relative;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+#menuToggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+    -webkit-touch-callout: none;
+}
+
+
+#menuToggle span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #1A5C94;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+    transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+}
+
+
+#menuToggle input:checked ~ span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #1A5C94;
+}
+
+
+#menuToggle input:checked ~ span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+
+#menuToggle input:checked ~ span:nth-last-child(2) {
+    opacity: 1;
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+
+#menu {
+    position: absolute;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+    background: rgba(255,255,255,0.75);
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li {
+    padding: 10px 0;
+    font-size: 22px;
+}
+
+#menu li img {
+    width: 6%;
+    margin-right: 8%
+}
+
+#menuToggle input:checked ~ ul {
+    transform: scale(1.0, 1.0);
+    opacity: 1;
+}
+
+
+/* HOME */ 
+
+.home-txt {
+    background-color: #FFF;
+    -webkit-box-shadow: 5px 5px 20px 4px rgba(0,0,0,0.5);
+    -moz-box-shadow: 5px 5px 20px 4px rgba(0,0,0,0.5);
+    box-shadow: 5px 5px 20px 4px rgba(0,0,0,0.5);
+}
+
+h1, h3 {
+    text-align: center;
+}
+
+p {
+    line-height: 150%;
+    color: #2E2D2C;
+    font-weight: lighter;
+}
+
+h3 {
+    color: #00192B;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    color: #1A5C94;
+}
+
+
+/* OOSTENDE */
+
+.oostende-txt {
+    background-color: rgba(255,255,255,0.85);
+    -webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.5);
+    box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.5);
+}
+
+.oostende-logo {
+      text-align: center;
+}
+
+
+/* CONTACT */
+
+.form-container {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+#contact {
+  padding: 25px;
+  margin: 20% 0 0 0;
+}
+
+#contact h3 {
+  display: block;
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+#contact h4 {
+  margin: 5px 0 15px;
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  text-align: center;
+}
+
+fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact input[type="url"],
+#contact textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+}
+
+#contact input[type="text"]:hover,
+#contact input[type="email"]:hover,
+#contact input[type="tel"]:hover,
+#contact input[type="url"]:hover,
+#contact textarea:hover {
+  -webkit-transition: border-color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid #aaa;
+}
+
+#contact textarea {
+  height: 100px;
+  max-width: 100%;
+  resize: none;
+}
+
+#contact button[type="submit"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #1A5C94;
+  color: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+#contact button[type="submit"]:hover {
+  background: #43A047;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#contact button[type="submit"]:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.copyright {
+  text-align: center;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  outline: 0;
+  border: 1px solid #aaa;
+}
+
+::-webkit-input-placeholder {
+  color: #888;
+}
+
+:-moz-placeholder {
+  color: #888;
+}
+
+::-moz-placeholder {
+  color: #888;
+}
+
+:-ms-input-placeholder {
+  color: #888;
+}
+
+
+@media (min-width: 200px) {
+  header {
+      height: 6vh;
+      padding: 0;
+  }
+
+  img {
+      width: 70%;
+  }
+
+  .logo {
+      padding: 1.5% 1% 0 0;
+  }
+
+  .home-txt {
+      height: 40vh;
+      margin: 25% 0 0 0;
+  }
+
+  p {
+      padding: 0 8%;
+      font-size: 0.8em;
+  }
+
+  h3 {
+      font-size: 1em;
+      margin: 7% 0 0 0;
+  }
+
+  h1 {
+      font-size: 2.5em;
+      margin: 6% 0 3% 0;
+  }
+
+  .home {
+      width: 100%;
+      max-width: 1080px; /* YOUR BG MAX SIZE */
+      background: url("../img/home-mobile.jpg") no-repeat;
+      background-size: 100%;
+      height: 94vh;
+  }
+
+  nav {
+      padding: 2.5% 0 0 4%;
+  }
+
+  #menu {
+      width: 500px;
+      height: 110vh;
+      background: rgba(255,255,255,0.90);
+  }
+
+  .oostende {
+      width: 100%;
+      max-width: 1080px; /* YOUR BG MAX SIZE */
+      background: url("../img/oostende-mobile.jpg") no-repeat;
+      background-size: 100%;
+      height: 94vh;
+  }
+  
+  .oostende-txt {
+      height: 94vh;
+  }
+
+  .o-logo {
+      margin: 10% 0 10% 0;
+      width: 80%;
+  }
+
+  .o-txt {
+      padding: 0 5%;
+      font-size: 0.8em;
+  }
+
+  #map {
+    height: 94vh;
+}
+}
+
+@media (min-width: 1200px) {
+  header {
+      height: 8vh;
+      padding: 0.8% 0 0 0;
+  }
+
+  img {
+      width: 100%;
+  }
+
+  .logo {
+      padding: 0 1% 0 0;
+  }
+  .home-txt {
+      height: 45vh;
+      margin: 10% 0 0 0;
+  }
+
+  p {
+      padding: 0 20%;
+      font-size: 1em;
+  }
+
+  h3 {
+      margin: 5% 0 0 0;
+      font-size: 1.4em;
+  }
+
+  h1 {
+      font-size: 4em;
+      margin: 5% 0 4% 0;
+  }
+
+  .home {
+      width: 100%;
+      max-width: 1920px; /* YOUR BG MAX SIZE */
+      background: url("../img/home.jpg") no-repeat;
+      background-size: 100%;
+      height: 92vh;
+  }
+
+  nav {
+      padding: 0.8% 0 0 2%;
+  }
+
+  #menu {
+      width: 350px;
+      height: 76.5vh;
+      background: rgba(255,255,255,0.75);
+  }
+
+  .oostende {
+      width: 100%;
+      max-width: 1920px; /* YOUR BG MAX SIZE */
+      background: url("../img/oostende.jpg") no-repeat;
+      background-size: 100%;
+      height: 92vh;
+  }
+
+  .oostende-txt {
+      height: 92vh;
+  }
+
+  .o-logo {
+      margin: 10% 0 4% 0;
+      width: 65%;
+  }
+
+  .o-txt {
+      padding: 0 10%;
+      font-size: 1em;
+  }
+
+  #map {
+    height: 92vh;
+  }
+}
