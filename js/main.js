@@ -48,11 +48,11 @@ function setPos(myLocation) {
                 });
                 marker.setMap(map);
                 var contentStringIndoor = '<div><h3>' + this.NAAM + '</h3><br><strong> Adres: </strong>' + this.STRAAT + ' ' + this.HUISNR + '<br><strong> Gemeente: </strong>' + this.POSTCODE + ' ' + this.GEMEENTE + '<br><strong>Telefoon: </strong>' + this.TELEFOON + '<br><strong> E-mail: </strong>' + this.EMAIL + '<br></div>';
-                var infowindowApotheek = new google.maps.InfoWindow({
+                var infowindowIndoor = new google.maps.InfoWindow({
                     content: contentStringIndoor
                 });
                 marker.addListener('click', function() {
-                    infowindowApotheek.open(map, marker);
+                    infowindowIndoor.open(map, marker);
                 });
             });
         });  
@@ -71,11 +71,11 @@ function setPos(myLocation) {
                 });
                 marker.setMap(map);
                 var contentStringOutdoor = '<div><h3>' + this.NAAM + '</h3><br><strong> Adres: </strong>' + this.STRAAT + ' ' + this.HUISNR + '<br><strong> Gemeente: </strong>' + this.POSTCODE + ' ' + this.GEMEENTE + '<br><strong>Telefoon: </strong>' + this.TELEFOON + '<br><strong> E-mail: </strong>' + this.EMAIL + '<br></div>';
-                var infowindowBibliotheek = new google.maps.InfoWindow({
+                var infowindowOutdoor = new google.maps.InfoWindow({
                     content: contentStringOutdoor
                 });
                 marker.addListener('click', function() {
-                    infowindowBibliotheek.open(map, marker);
+                    infowindowOutdoor.open(map, marker);
                 });
             });
         });  
